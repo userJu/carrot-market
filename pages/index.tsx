@@ -94,7 +94,7 @@ const Home: NextPage = () => {
           type="file"
           className="file:cursor-pointer file:hover:text-purple-400 file:hover:bg-white file:hover:border  transition-colors file:border-0 file:rounded-xl file:px-5 file: text-white file:bg-purple-400"
         /> */}
-        <p className="first-letter:text-3xl first-letter:hover:text-purple-200">
+        <p className="first-letter:text-3xl first-letter:hover:text-purple-200 dark:bg-black dark:text-white">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum fuga est
           quasi perspiciatis? Dolorum voluptatibus eius est aspernatur
           blanditiis error hic tempora autem amet. Deserunt quos illum qui
