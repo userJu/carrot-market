@@ -16,7 +16,7 @@ const Home: NextPage = () => {
             <span className="shadow-xl p-2 rounded-md">💖</span>
           </div>
         </div>
-        <div className="bg-zinc-400 h-72 mb-5 group-hover:bg-red-300" />
+        <div className="bg-zinc-400 h-72 mb-5 group-hover:bg-red-300 transition-colors" />
         <div className="flex flex-col">
           <span className="font-medium text-xl">Swoon Lounge</span>
           <span className="text-xs text-gray-500 ">Chair</span>
@@ -58,6 +58,49 @@ const Home: NextPage = () => {
         ))}
       </ul>
       {/* 첫째만 바꾸고 싶고 그러면  */}
+      <form action="" className="flex flex-col space-y-2 ">
+        <input
+          type="text"
+          required
+          // disabled
+          placeholder="Username"
+          // className="required:border-2 border-yellow-500"
+          // className="invalid: bg-red-500"
+          // className="placeholder-shown:bg-teal-500"
+          // className="disabled:opacity-0"
+          className="border p-1 peer border-gray-400 rounded-lg "
+        />
+        <span className=" hidden peer-valid:block peer-valid: text-teal-500">
+          Awesome username
+        </span>
+        <input type="submit" value="Login" className="bg-white" />
+      </form>
+      <div className="flex flex-col space-y-2 p-5">
+        {/* selection */}
+        {/* <details className="select-none open:text-white open:bg-indigo-300">
+          <summary className="select-none cursor-pointer">
+            What is my fav food.
+          </summary>
+          <span className="selection:bg-indigo-500">김치</span>
+        </details> */}
+        {/* ul / li  */}
+        {/* <ul className="list-decimal marker:text-teal-500">
+          <li>hi</li>
+          <li>hi</li>
+          <li>hi</li>
+        </ul> */}
+        {/* input */}
+        {/* <input
+          type="file"
+          className="file:cursor-pointer file:hover:text-purple-400 file:hover:bg-white file:hover:border  transition-colors file:border-0 file:rounded-xl file:px-5 file: text-white file:bg-purple-400"
+        /> */}
+        <p className="first-letter:text-3xl first-letter:hover:text-purple-200">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum fuga est
+          quasi perspiciatis? Dolorum voluptatibus eius est aspernatur
+          blanditiis error hic tempora autem amet. Deserunt quos illum qui
+          itaque nemo.
+        </p>
+      </div>
     </div>
   );
 };
