@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+  // 다른 객체에 연결될 때 그 객체가 존재하길 바란다는 것
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+  // 이 작업은 prisma가 할 거라는 것을 밝히기
+
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  // 여기서 쓰는 @id parameter은 이게 model의 id라는 것을 알려주는 역할. 유니크한 식별자다
+  // autoincrement()를 사용해 자동 증가하도록
+  phone     Int?     @unique
+  email     String?  @unique
+  name      String
+  avatar    String?
+  createdAt DateTime @default(now())
+  // User가 만들어질 때 그 시점의 날찌를 가져와서 여기에 넣어주는 함수가 now()이다
+  updatedAt DateTime @updatedAt
+  // 유저가 업데이트 될 때마다 이 field가 변할 것이라고 말해줌
+}
