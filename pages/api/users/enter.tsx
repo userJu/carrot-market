@@ -2,19 +2,15 @@
 // 이렇게 하면 이 경로로 접속했을 때 api가 뜬다
 
 import { NextApiRequest, NextApiResponse } from "next";
-import client from "../../libs/client";
+import client from "../../../libs/server/client";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await client.user.create({
-    data: {
-      email: "h2",
-      name: "hi",
-    },
-  });
-  res.json({
-    ok: true,
-  });
+  if (req.method !== "POST") {
+    res.status(401).end();
+  }
+  console.log(req.body.email);
+  res.status(200).end();
 }
